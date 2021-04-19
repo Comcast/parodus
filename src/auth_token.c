@@ -307,6 +307,12 @@ void createCurlheader(char *mac_header, char *serial_header, char *uuid_header, 
 			free(uuid_header);
 			uuid_header = NULL;
 		}
+		else
+		{
+			ParodusError("Failed in uuid_header allocation\n");
+			free(transaction_uuid);
+			transaction_uuid = NULL;
+		}
 	}
 	else
 	{
